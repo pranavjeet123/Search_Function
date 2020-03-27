@@ -275,3 +275,42 @@ var output = search("\u00a0What",summaryObject,4);
 console.log(output);
 
 *********un-comment this line*/
+
+
+/* A sample test to check number of return value */
+
+
+/* Test 1 to find output*/
+const output = search("\u00a0What",summaryObject,4);
+let resultoutput = 1;
+  
+if(output.length!== resultoutput){
+  throw new Error ("error XXXXX can't pass number of returned value not matching");
+}
+
+/* Test 2 to find return type of summary*/
+const output2 = search("\u00a0What",summaryObject,4);
+let resultstring = "string";
+  
+if(typeof(output2[0].summary)!==resultstring ){
+  throw new Error (" error XXXXX summary key is not present and typeof is not string");
+}
+
+
+/*TEST  test return value is an array of object */
+
+const output3 = search("the book",summaryObject,4);
+let resultValueType = "object";
+  
+if(typeof(output3[0])!==resultValueType ){
+  throw new Error (" error XXXXX Returned Value is not an Array of object");
+}
+
+
+/* Test Search function takes 3 arguments only */
+
+let argumentsLength= search.length;
+
+if(argumentsLength!==3 ){
+    throw new Error (" error XXXXX, Arguments are than 3 ");
+  }
